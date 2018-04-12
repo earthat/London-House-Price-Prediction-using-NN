@@ -61,4 +61,12 @@ predictedop=predictedop.*max(price1);
 The function 'preparets' makes the data usable for NN training. This code snippet gives us the predicted output which is further plotted and compared in our GUI with previous year house price of same quarter.
 
 ![1](https://user-images.githubusercontent.com/11607018/38652282-ea9b429c-3e22-11e8-8136-2674c8cf62ff.png)
+Figure 1.3.1: our designed GUI for predicting the house price of each quarter
 
+MATLAB also make it possible to write the respective month on X-axis in the plot as in above figure. The trained network's accuracy can be judged by plotting a curve of MSE and iterations required as shown in figure 1.3.2. This is also a convergence curve, as soon as MSE settles to lowest value, good is the NN training. In our work error is settled at 10-4 which is desired.
+
+![2](https://user-images.githubusercontent.com/11607018/38652288-f56a753a-3e22-11e8-855e-40250458c630.png)
+figure 1.3.2: MSE vs Iteration plot after NN traininig
+
+'trainlm' is the function which is based on Laquanberg method for the backpropagation method. A feedback network is generated with two time stamp delay and 20 neurons in an hidden layer in our work. 
+![3](https://user-images.githubusercontent.com/11607018/38652291-f5b76232-3e22-11e8-8bd1-aee9e6eed296.png)
