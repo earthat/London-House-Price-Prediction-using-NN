@@ -12,7 +12,7 @@ To predict the house price, we need a dataset which can train the neural network
 These variables are further divided as dependent variables and independent variables for the NN training. Out of these dependent variables will be the input for training and independent variable will act as target. The table of these variables is given as
 
 |Dependent variables	|Independent Variables|
----------------------------------------------
+-----------------------|---------------------
 |1. Date of transaction (Month, Year)|Price of property (£)|
 |2.Type(Detached/Semidetached/Terrace/Flat)| |
 |3. Build (Old/New) | |
