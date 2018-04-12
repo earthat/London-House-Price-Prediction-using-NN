@@ -46,3 +46,19 @@ The downloaded data is in csv format, so we converted that into .mat format firs
 
 After data is loaded into script and  assigned into corresponding variables, these values are normalised to reduce the difference in between all input and output values to NN. This way the similarity of data can be increased and accuracy of predicted price. 
 
+After NN is trained, a model is ready with us which will be used for predicting next year or next quarter year house price. No input and output of time series to be predicted is available with us. So we will use the recent year's known values equal to hidden layers number and predfixed to days price to be predicted. For example in a quarter of 90 days, 20 days data from previous known year is added prior to these 90 days matrix whose these 90 elements will be zero. This data will be further used to predict the required time frame house price.
+
+```
+% daysahead=30;
+ 
+[xs,xis,ais,ts] = preparets(nets,X(end:-1:end-daysahead-numel(inputDelays)+1)...
+                               ,{},T(end:-1:end-daysahead-numel(inputDelays)+1));
+ys = nets(xs,xis,ais);
+predictedop=cell2mat(ys);
+predictedop=predictedop.*max(price1);
+```
+
+The function 'preparets' makes the data usable for NN training. This code snippet gives us the predicted output which is further plotted and compared in our GUI with previous year house price of same quarter.
+
+![1](https://user-images.githubusercontent.com/11607018/38652282-ea9b429c-3e22-11e8-8136-2674c8cf62ff.png)
+
